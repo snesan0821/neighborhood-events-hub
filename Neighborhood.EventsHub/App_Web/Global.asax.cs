@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Xml.Linq;
 using CalendarFeedGenerator;
+using System.Web.Http;
+
 
 namespace App_Web
 {
@@ -41,6 +43,8 @@ namespace App_Web
 
             // cache in Application scope
             Application["Events"] = events;
+
+            GlobalConfiguration.Configure(CalendarFeedService.WebApiConfig.Register);
         }
     }
 }

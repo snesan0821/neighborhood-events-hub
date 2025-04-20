@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace CalendarFeedService
 {
@@ -9,11 +6,10 @@ namespace CalendarFeedService
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
+            // enable attribute routing ([Route("api/...")])
             config.MapHttpAttributeRoutes();
 
+            // fallback conventional route
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
