@@ -1,21 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Optimization;
-using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
+using System.Xml.Linq;
+using CalendarFeedGenerator;
 
 namespace App_Web
 {
-    public class Global : HttpApplication
+    public class Global : System.Web.HttpApplication
     {
-        void Application_Start(object sender, EventArgs e)
+        protected void Application_Start(object sender, EventArgs e)
         {
-            // Code that runs on application startup
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            var path = Server.MapPath("~/App_Data/Events.xml");
+            List<EventDto> list;
+
+            if (System.IO.File.Exists(path))
+            {
+                var doc = XDocument.Load(path);
+                list = doc.Root?
+                        .Elements("Event")
+                        .Select(x => new EventDto
+                        {
+                            Id = (string)x.Element("Id"),
+                            Title = (string)x.Element("Title"),
+                            Date = DateTime.Parse((string)x.Element("Date"))
+                        })
+                        .ToList() ?? new List<EventDto>();
+            }
+            else
+            {
+                list = new List<EventDto>();
+            }
+
+            Application["Events"] = list;
         }
     }
 }
