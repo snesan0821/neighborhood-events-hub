@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Events>
+	<!-- sample real event -->
+	<Event>
+		<Id>1</Id>
+		<Title>Neighborhood Yard Sale</Title>
+		<Date>2025-05-15</Date>
+		<Time>09:00</Time>
+		<Address>123 Maple St</Address>
+		<IsApproved>true</IsApproved>
+	</Event>
+
+	<!-- DUMMY entry to verify loader; remove later -->
+	<Event>
+		<Id>999</Id>
+		<Title>Dummy Check</Title>
+		<Date>2025-01-01</Date>
+		<Time>00:00</Time>
+		<Address>Nowhere</Address>
+		<IsApproved>true</IsApproved>
+	</Event>
+</Events>

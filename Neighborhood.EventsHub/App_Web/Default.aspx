@@ -23,23 +23,58 @@
         <hr />
 
         <!-- ========== Try‑It section for Calendar Feed ================= -->
-        <h3>Generate iCal feed from application cache</h3>
+       <h3>Generate iCal feed from application cache</h3>
 
-        <asp:Button runat="server"
-                    ID="btnShowCal"
-                    CssClass="btn btn-success"
-                    Text="Show Calendar Text"
-                    OnClick="btnShowCal_Click" />
+<asp:Button ID="btnShowCal"
+            runat="server"
+            CssClass="btn btn-success"
+            Text="Show Calendar Text"
+            OnClick="btnShowCal_Click" />
 
-        <br /><br />
+<!-- Download link -->
+<a class="btn btn-success"
+   href="https://localhost:44322/api/calendar">Download .ics</a>
 
-        <asp:TextBox runat="server"
-                     ID="txtCal"
-                     TextMode="MultiLine"
-                     Rows="12"
-                     Width="100%"
-                     CssClass="form-control" />
+<br /><br />
+
+<asp:TextBox ID="txtCal"
+             runat="server"
+             TextMode="MultiLine"
+             Rows="12"
+             Width="100%"
+             CssClass="form-control" />
+
         <!-- ============================================================ -->
+
+        <h3>Application &amp; Components Summary</h3>
+
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Provider</th>
+            <th>Type</th>
+            <th>Operation / Component</th>
+            <th>Params</th>
+            <th>Return</th>
+            <th>Description</th>
+            <th>Try‑It</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Your Name</td>
+            <td>DLL + Web API</td>
+            <td>GenerateICal</td>
+            <td>List&lt;EventDto&gt;</td>
+            <td>.ics (string)</td>
+            <td>Build iCal feed from Events cache</td>
+            <td><a href="https://webstrarX.fulton.asu.edu/page1/api/calendar"
+                   target="_blank">Run</a></td>
+        </tr>
+        <!-- add more rows as you add components -->
+    </tbody>
+</table>
+
 
     </main>
 
