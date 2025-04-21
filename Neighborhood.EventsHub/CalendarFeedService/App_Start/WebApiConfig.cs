@@ -6,7 +6,7 @@ namespace CalendarFeedService
     {
         public static void Register(HttpConfiguration config)
         {
-            // enable attribute routing ([Route("api/...")])
+            // enable attribute routing
             config.MapHttpAttributeRoutes();
 
             // fallback conventional route

@@ -14,7 +14,7 @@ namespace App_Web
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            // Physical path to App_Data/Events.xml
+            
             string xmlPath = Path.Combine(
                 HttpRuntime.AppDomainAppPath, @"App_Data\Events.xml");
 

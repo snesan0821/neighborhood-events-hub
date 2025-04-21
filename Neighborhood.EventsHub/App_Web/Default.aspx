@@ -28,16 +28,16 @@
     <div class="mb-4">
       <a class="btn btn-info me-2" href="Member.aspx">Member Page</a>
       <a class="btn btn-warning" href="Staff.aspx">Staff Page</a>
-      &nbsp;|&nbsp; Visits this browser: 
+      &nbsp;|&nbsp; Visits this browser:
       <asp:Label ID="lblVisits" runat="server" CssClass="badge bg-secondary" />
     </div>
 
     <!-- ======= Try‑It section for Calendar Feed ======= -->
     <h3>Generate iCal feed from application cache</h3>
 
-    <asp:Button 
-      ID="btnShowCal" 
-      runat="server" 
+    <asp:Button
+      ID="btnShowCal"
+      runat="server"
       CssClass="btn btn-success me-2"
       Text="Show Calendar Text"
       OnClick="btnShowCal_Click" />
@@ -50,7 +50,7 @@
 
     <br /><br />
 
-    <asp:TextBox 
+    <asp:TextBox
       ID="txtCal"
       runat="server"
       TextMode="MultiLine"
@@ -75,16 +75,51 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Your Name</td>
-          <td>DLL + Web API</td>
-          <td>GenerateICal</td>
-          <td>List&lt;EventDto&gt;</td>
-          <td>.ics (string)</td>
-          <td>Builds iCal feed from <code>Application["Events"]</code></td>
-          <td><a href="api/calendar" target="_blank">Run</a></td>
-        </tr>
-      </tbody>
+  <!-- 1 ▸ Default page -->
+  <tr>
+    <td>Sriram Nesan</td>
+    <td>ASPX</td>
+    <td>Default.aspx</td>
+    <td>–</td>
+    <td>page</td>
+    <td>GUI design and C# code‑behind GUI. Acts as the public landing page and service directory you are viewing now.</td>
+    <td><a href="Default.aspx">Run</a></td>
+  </tr>
+
+  <!-- 2 ▸ Global.asax handler -->
+  <tr>
+    <td>Sriram Nesan</td>
+    <td>Global</td>
+    <td>Application_Start</td>
+    <td>–</td>
+    <td>void</td>
+    <td>C# code as script in <code>Global.asax</code>. Loads <code>Events.xml</code> into <code>Application["Events"]</code> when the application starts.</td>
+    <td><a href="Member1_Test.aspx" target="_blank">test</a></td>
+  </tr>
+
+  <!-- 3 ▸ DLL method -->
+  <tr>
+    <td>Sriram Nesan</td>
+    <td>DLL</td>
+    <td>GenerateICal</td>
+    <td>List&lt;EventDto&gt;</td>
+    <td>string (.ics)</td>
+    <td>Library class and local component that build the iCalendar feed from cached events. Called by Default.aspx and the Web API.</td>
+    <td><a href="Member1_Test.aspx" target="_blank">test</a></td>
+  </tr>
+
+  <!-- 4 ▸ Web API endpoint -->
+  <tr>
+    <td>Sriram Nesan</td>
+    <td>Web API</td>
+    <td>/api/calendar (GET)</td>
+    <td>–</td>
+    <td>text/calendar</td>
+    <td>Retrieves the calendar feed over HTTP. This endpoint is linked to the Default page’s “Download .ics” button.</td>
+    <td><a href="api/calendar" target="_blank">Run</a></td>
+  </tr>
+</tbody>
+
     </table>
 
   </main>
